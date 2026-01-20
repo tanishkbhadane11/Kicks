@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "types": ["vitest/globals", "node"],
+
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,           // ✅ FIX: errors when importing JSON
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting (relaxed for working models) */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": false,
+
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]                  // ✅ FIX: removed ./ for Vite compatibility
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]           // ✅ FIX: avoids random lib errors
+
+}
